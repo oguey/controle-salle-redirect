@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection...</title>
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const salle = params.get('salle');
+
+      if (salle) {
+        localStorage.setItem('salleParam', salle);
+      }
+
+      const appUrl = `ms-powerapps://apps/play/appId=2ed480a5-d601-4687-94c7-e4ea4ede50b3&tenantId=654d7977-996a-4c8c-9f5e-5df3fced0295&source=qr`;
+      window.location.href = appUrl;
+
+      setTimeout(() => {
+        window.location.href = "https://apps.apple.com/app/microsoft-power-apps/id1047318566"; // ou Play Store
+      }, 2000);
+    };
+  </script>
+</head>
+<body>
+  <p>Redirection vers Power Apps en cours...</p>
+</body>
+</html>
